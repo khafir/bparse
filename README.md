@@ -4,7 +4,7 @@ Perl script for parsing battle scripts.log entries and auto-generating exception
 Before Proceeding:
 
 
-Installation:
+Installation:\n
 1. Move bparse.pl to directory of choice.
 2. Modify permissions for bparse.pl appropriate with your environment, currently bparse only needs to read your scripts.log file.
 
