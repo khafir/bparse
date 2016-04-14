@@ -17,9 +17,11 @@ Execution Example:
 #Example Output
 <code>[steam@localhost arma3]$ ./bparse.pl /home/steam/steamcmd/arma3/battleye/scripts.log</code><br>
 <code>#38,!="(_this\nselect\n0)\nexecVM\n\"\A3\Structures_F\Wrecks\Scripts\Wreck_Heli_Attack_01.sqf\""</code><br>
-<code>#38,!="(_this\nselect\n0)\nexecVM\n\"\A3\Structures_F\Wrecks\Scripts\Wreck_Heli_Attack_01.sqf\""</code>
+<code>#38,!="(_this\nselect\n0)\nexecVM\n\"\A3\Structures_F\Wrecks\Scripts\Wreck_Heli_Attack_01.sqf\""</code><br>
+<code>Total Entries parsed from /home/steam/steamcmd/arma3/battleye/scripts.log: 2</code><br>
 
-Total Entries parsed from /home/steam/steamcmd/arma3/battleye/scripts.log: 2
+#Optional Parameters
+You may elect to include additional information in the output such as the date, IP, user, GUID, or all aforementioned fields in addition to the exception number and the recommended exception text. To display additional information use the following syntax for the secondary arguement: <br><code>-d[diuga]</code><br>Example: ./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -du<br>Example: ./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -dgi<br>
 
 Output Explained:
 The script will display entries as they pertain to your battleye/scripts.log file, exception number first (#XXX) followed by the suggested exception text (!="xxx"). Exception suggestions have nested double-quotes escaped.
