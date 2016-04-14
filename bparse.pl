@@ -1,8 +1,6 @@
 #!/usr/bin/perl -w
 use strict;
 
-#11.04.2016 08:34:05: |TG| LowSpeed (2.97.118.225:2304) 7cff65011259b4f59b40640dddef3b92 - #28 "bject) nearObjects ["Land_Communication_anchor_F",12];{_x setDamage 1} forEach _anchorList;"
-
 if (!$ARGV[0]){print "\nUse: ./bparse.pl full_path_to_battleye_scripts_log_file\nex:  ./barse.pl /home/steam/steamcmd/arma3/battleye/scripts.log\n\n";exit;}
 my $file = "$ARGV[0]";
 
