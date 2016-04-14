@@ -23,7 +23,7 @@ Execution Example:
 #Optional Parameters
 You may elect to include additional information in the output such as the date, IP, user, GUID, or all aforementioned fields in addition to the exception number and the recommended exception text.<br><br>To display additional information use the following syntax for the secondary arguement: <code>-d[diuga]</code><br>Example: <code>./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -du</code><br>Example: <code>./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -dgi</code><br>
 
-Output Explained:
+Default Output Explained:
 The script will display entries as they pertain to your battleye/scripts.log file, exception number first (#XXX) followed by the suggested exception text (!="xxx"). Exception suggestions have nested double-quotes escaped.
 
 #Version
