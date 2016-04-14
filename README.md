@@ -16,7 +16,7 @@ Execution Example:
 
 #Example Output
 <code>[steam@localhost arma3]$ ./bparse.pl /home/steam/steamcmd/arma3/battleye/scripts.log</code><br>
-<code>#38,!="(_this\nselect\n0)\nexecVM\n\"\A3\Structures_F\Wrecks\Scripts\Wreck_Heli_Attack_01.sqf\""/code><br>
+<code>#38,!="(_this\nselect\n0)\nexecVM\n\"\A3\Structures_F\Wrecks\Scripts\Wreck_Heli_Attack_01.sqf\""</code><br>
 <code>#38,!="(_this\nselect\n0)\nexecVM\n\"\A3\Structures_F\Wrecks\Scripts\Wreck_Heli_Attack_01.sqf\""</code>
 
 Total Entries parsed from /home/steam/steamcmd/arma3/battleye/scripts.log: 2
