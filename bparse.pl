@@ -70,18 +70,6 @@ foreach (@chopped)
 	}
 }
 
-
-
-#foreach (@chopped){print "$_\n";}
-#my $pct = scalar(@chopped);print "\nTotal Entries parsed from $file: $pct\n\n";
-
-#foreach (@udat){print "$_\n";}
-#my $uct = scalar(@udat);print "\nLines in \@udat: $uct\n\n";
-
-
-#11.04.2016 08:34:05: |TG| LowSpeed (2.97.118.225:2304) 7cff65011259b4f59b40640dddef3b92 - #28 "bject) nearObjects ["Land_Communication_anchor_F",12];{_x setDamage 1} forEach _anchorList;"
-
-
 my $clt = 0;
 
 
