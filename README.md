@@ -23,3 +23,6 @@ Total Entries parsed from /home/steam/steamcmd/arma3/battleye/scripts.log: 2
 
 Output Explained:
 The script will display entries as they pertain to your battleye/scripts.log file, exception number first (#XXX) followed by the suggested exception text (!="xxx"). Exception suggestions have nested double-quotes escaped.
+
+#Version
+Version 1.1 has been uploaded. It adds switches that can be used (not required) as a secondary arguement. They are (-d) as a display precursor, to be immediately followed by [diuga] to display the date, IP, user, GUID, or all fields parsed in addition to the exception number and suggested exception text.
