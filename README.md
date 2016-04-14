@@ -12,7 +12,7 @@ Be smart about making changes to your battleye filters. Backup your scripts.txt 
 ./bparse.pl $file_location{this is the location for scripts.txt, usually within your battleye folder.} 
 
 Execution Example:
-./bparse.pl /home/steam/steamcmd/arma3/battleye/scripts.log
+<code>./bparse.pl /home/steam/steamcmd/arma3/battleye/scripts.log</code><br>
 
 #Example Output
 <code>[steam@localhost arma3]$ ./bparse.pl /home/steam/steamcmd/arma3/battleye/scripts.log</code><br>
