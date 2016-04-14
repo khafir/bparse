@@ -21,7 +21,7 @@ Execution Example:
 <code>Total Entries parsed from /home/steam/steamcmd/arma3/battleye/scripts.log: 2</code><br>
 
 #Optional Parameters
-You may elect to include additional information in the output such as the date, IP, user, GUID, or all aforementioned fields in addition to the exception number and the recommended exception text. To display additional information use the following syntax for the secondary arguement: <code>-d[diuga]</code><br>Example: <code>./bparse/home/steam/steamcmd/arma3/battleye/scripts.log-du</code><br>Example: <code>./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -dgi</code><br>
+You may elect to include additional information in the output such as the date, IP, user, GUID, or all aforementioned fields in addition to the exception number and the recommended exception text. To display additional information use the following syntax for the secondary arguement: <code>-d[diuga]</code><br>Example: <code>./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -du</code><br>Example: <code>./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -dgi</code><br>
 
 Output Explained:
 The script will display entries as they pertain to your battleye/scripts.log file, exception number first (#XXX) followed by the suggested exception text (!="xxx"). Exception suggestions have nested double-quotes escaped.
