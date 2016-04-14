@@ -27,6 +27,6 @@ Default Output Explained:
 The script will display entries as they pertain to your battleye/scripts.log file, exception number first (#XXX) followed by the suggested exception text (!="xxx"). Exception suggestions have nested double-quotes escaped.
 
 #Version
-v1.1: Adds switches that can be used (not required) as a secondary arguement. They are (-d) as a display precursor, to be immediately followed by [diuga] to display the date, IP, user, GUID, or all fields parsed in addition to the exception number and suggested exception text.
+v1.1 (2016-04-14): Adds switches that can be used (not required) as a secondary arguement. They are (-d) as a display precursor, to be immediately followed by [diuga] to display the date, IP, user, GUID, or all fields parsed in addition to the exception number and suggested exception text.
 
-v1.0: Initial release with basic output of exception number and recommended exception text.
+v1.0 (2016-04-10): Initial release with basic output of exception number and recommended exception text.
