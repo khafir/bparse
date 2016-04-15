@@ -22,7 +22,8 @@ Execution Example:
 <code>#38,!="(_this\nselect\n0)\nexecVM\n\"\A3\Structures_F\Wrecks\Scripts\Wreck_Heli_Attack_01.sqf\""</code><br>
 <code>Total Entries parsed from /home/steam/steamcmd/arma3/battleye/scripts.log: 2</code><br>
 
-#Optional Parameters<br><b>Parameters are case sensitive!</b>
+#Optional Parameters
+<b>Parameters are case sensitive!</b>
 You may elect to include additional information in the output such as the date, IP, user, GUID, or all aforementioned fields in addition to the exception number and the recommended exception text. It is worth noting that the 'U' argument will provide a unique list of exceptions void of duplicates.<br><br>To display additional information use the following syntax for the secondary arguement: <code>-d[diugaU]</code><br>Example: <code>./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -du</code><br>Example: <code>./bparse/home/steam/steamcmd/arma3/battleye/scripts.log -dgi</code><br>
 
 Default Output Explained:
