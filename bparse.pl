@@ -70,22 +70,34 @@ foreach (@chopped)
 
 my $clt = 0;
 
+my @unique;
 
-foreach my $line (@udat)
+if($ARGV[1] =~ m/\-d.*U.*/)
 {
-	my ($date,$user,$ip,$guid);
-	my $pre = "";
-	if ($ARGV[1])
-	{
-		if ($ARGV[1] =~ m/\-d.*d.*/i){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$date,";}
-		if ($ARGV[1] =~ m/\-d.*i.*/i){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$ip,";}
-		if ($ARGV[1] =~ m/\-d.*u.*/i){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$user,";}
-		if ($ARGV[1] =~ m/\-d.*g.*/i){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$guid,";}
-		if ($ARGV[1] =~ m/\-d.*a.*/i){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$date,"."$ip,"."$user,"."$guid,";}
-		$chopped[$clt] = "$pre"."$chopped[$clt]";
-	}
-	$clt++;
-}
+	my %seen =() ;
+	@unique = grep { ! $seen{$_}++ } @chopped;
 
-foreach (@chopped){print "$_\n";}
-my $pct = scalar(@chopped);print "\nTotal Entries parsed from $file: $pct\n\n";
+	foreach (@unique){print "$_\n";}
+	my $uct = scalar(@unique);print "\nTotal Unique Entries parsed from $file: $uct\n\n";	
+}
+else
+{
+	foreach my $line (@udat)
+	{
+		my ($date,$user,$ip,$guid);
+		my $pre = "";
+		if ($ARGV[1])
+		{
+			if ($ARGV[1] =~ m/\-d.*d.*/){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$date,";}
+			if ($ARGV[1] =~ m/\-d.*i.*/){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$ip,";}
+			if ($ARGV[1] =~ m/\-d.*u.*/){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$user,";}
+			if ($ARGV[1] =~ m/\-d.*g.*/){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$guid,";}
+			if ($ARGV[1] =~ m/\-d.*a.*/){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$date,"."$ip,"."$user,"."$guid,";}
+			$chopped[$clt] = "$pre"."$chopped[$clt]";
+		}
+		$clt++;
+	}
+
+	foreach (@chopped){print "$_\n";}
+	my $pct = scalar(@chopped);print "\nTotal Entries parsed from $file: $pct\n\n";
+}
