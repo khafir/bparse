@@ -1,6 +1,7 @@
-Administrative Note: I will be travelling out of the country under austere conditions and will not be returning home until 2016-05-01. During this time I will not be able to update this project or respond to issues.
+#Administrative Note:
+A bug has been discovered where under certain circumstances extaneous newline (\n) characters are injected into the suggested exception text. This is currently under investigation and I will post an update version of the code when the condition is rectivied (05/01/2016)
 
-# bparse.pl
+#bparse.pl
 Perl script for parsing battleye scripts.log entries and auto-generating exception entries. Designed for and only tested against the  Exile@ARMAIII platform in a CentOS-7 environment.
 
 #Before Proceeding
