@@ -1,5 +1,5 @@
 #Administrative Note:
-A bug has been discovered where under certain circumstances extaneous newline (\n) characters are injected into the suggested exception text. This is currently under investigation and I will post an update version of the code when the condition is rectivied (05/01/2016)
+A bug has been discovered where under certain circumstances extaneous newline (\n) characters are injected into the suggested exception text. This is currently under investigation and I will post an updated version of the code when the condition is rectified (05/01/2016)
 
 #bparse.pl
 Perl script for parsing battleye scripts.log entries and auto-generating exception entries. Designed for and only tested against the  Exile@ARMAIII platform in a CentOS-7 environment.
