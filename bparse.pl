@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 use strict;
 
-if (!$ARGV[0]){print "\nUse: ./bparse.pl full_path_to_battleye_scripts_log_file\nex:  ./barse.pl /home/steam/steamcmd/arma3/battleye/scripts.log\n\n";exit;}
+if (!$ARGV[0]){print "\nUse: ./bparse.pl full_path_to_battleye_scripts_log_file\nex:  ./bparse.pl /home/steam/steamcmd/arma3/battleye/scripts.log\n\n";exit;}
 my $file = "$ARGV[0]";
 
 my $str;
@@ -45,7 +45,7 @@ foreach (@parsed)
 	$ct++;
 }
 
-foreach (@chopped){$_=~ s/\s+|\t+\\n/\\n/g;}
+foreach (@chopped){$_=~ s/(\s+\\n)|(\t+\\n)/\\n/g;}
 
 foreach (@chopped)
 {
