@@ -1,4 +1,4 @@
-#Administrative Note:
+#Administrative Advisory:
 No current advisories.
 
 #bparse.pl
