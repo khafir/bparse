@@ -25,7 +25,7 @@ Execution Example:
 
 #Optional Parameters
 <b>Parameters are case sensitive!</b><br>
-You may elect to include additional information in the output such as the date, IP, user, GUID, or all aforementioned fields in addition to the exception number and the recommended exception text. It is worth noting that the 'U' argument will provide a unique list of exceptions void of duplicates.<br><br>To display additional information use the following syntax for the secondary arguement: <code>-d[diugaU]</code><br>Example: <code>./bparse /home/steam/steamcmd/arma3/battleye/scripts.log -du</code><br>Example: <code>./bparse /home/steam/steamcmd/arma3/battleye/scripts.log -dgi</code><br>
+You may elect to include additional information in the output such as the date, IP, user, GUID, or all aforementioned fields in addition to the exception number and the recommended exception text. It is worth noting that the 'U' argument will provide a unique list of exceptions void of duplicates. On request, a special option has been added to allow the user to blindly add all suggested exceptions, <b>1337</b><br><br>To display additional information use the following syntax for the secondary arguement: <code>-d[diugaU,'1337']</code><br>Example: <code>./bparse /home/steam/steamcmd/arma3/battleye/scripts.log -du</code><br>Example: <code>./bparse /home/steam/steamcmd/arma3/battleye/scripts.log -dgi</code><br>
 
 Default Output Explained:
 The script will display entries as they pertain to your battleye/scripts.log file, exception number first (#XXX) followed by the suggested exception text (!="xxx"). Exception suggestions have nested double-quotes escaped.
