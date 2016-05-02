@@ -2,7 +2,12 @@
 use strict;
 
 if (!$ARGV[0]){print "\nUse: ./bparse.pl full_path_to_battleye_scripts_log_file\nex:  ./bparse.pl /home/steam/steamcmd/arma3/battleye/scripts.log\n\n";exit;}
-my $file = "$ARGV[0]";
+my $file = "$ARGV[0]";chomp($file);
+
+if (!-e $file)
+{
+	print "\n\%\% WARNING: $file does not exist!\n\%\% Verify that the filename you specified is valid.\n\n";exit;
+}
 
 my $str;
 my (@parsed,@chopped,@udat);
@@ -68,17 +73,46 @@ foreach (@chopped)
 	}
 }
 
-my $clt = 0;
-
 my @unique;
-
-if($ARGV[1] =~ m/\-d.*U.*/)
+my $leroy  = "null";
+my $leroy1 = "null";
+if($ARGV[1] and $ARGV[1] =~ m/\-d.*U.*/)
 {
 	my %seen =() ;
 	@unique = grep { ! $seen{$_}++ } @chopped;
 
-	foreach (@unique){print "$_\n";}
+	my $clt = 1;
+	print "\n";
+	foreach (@unique){print "\[$clt\]  $_\n";$clt++;}
 	my $uct = scalar(@unique);print "\nTotal Unique Entries parsed from $file: $uct\n\n";	
+}
+elsif($ARGV[1] =~ m/^\-d1337$/)
+{
+	until ($leroy =~ m/^1337$|^no$/i)
+	{
+		print "\%\% Confirm addition of all projected exceptions (1337/no): ";	
+		$leroy = <STDIN>;chomp($leroy);
+	}
+	if ($leroy eq "1337")
+	{
+		until ($leroy1 =~ m/^1337$|^no$/i)
+		{
+			print "\%\% Confirm you really want to do this (1337/no): ";	
+			$leroy1 = <STDIN>;chomp($leroy1);
+		}	
+		if ($leroy1 eq "1337")
+		{
+			print "\nTHIS FUNCTIONALITY NOT YET IMPLEMENTED!!!\n\n";exit;
+		}
+		else
+		{
+			print "\nVERY WISE CHOICE.\n\n";exit;
+		}
+	}
+	else
+	{
+		print "\nWISE CHOICE.\n\n";exit;
+	}
 }
 else
 {
@@ -86,6 +120,7 @@ else
 	{
 		my ($date,$user,$ip,$guid);
 		my $pre = "";
+		my $clt = 1;
 		if ($ARGV[1])
 		{
 			if ($ARGV[1] =~ m/\-d.*d.*/){($date,$user,$ip,$guid) = split(/,/,$udat[$line]);$pre = "$pre"."$date,";}
@@ -97,7 +132,77 @@ else
 		}
 		$clt++;
 	}
-
-	foreach (@chopped){print "$_\n";}
+	my $clt = 1;
+	print "\n";
+	foreach (@chopped){print "\[$clt\]  $_\n";$clt++;}
 	my $pct = scalar(@chopped);print "\nTotal Entries parsed from $file: $pct\n\n";
+}
+
+my $ucon = "null";
+until ($ucon =~ m/^yes$|^no$/i)
+{
+	print "Do you wish to add suggested exceptions (yes/no): ";
+	$ucon = <STDIN>;
+}
+if ($ucon =~ m/yes/i)
+{
+	my $slog = backup();
+	print "Backup Location: $slog\n\n";
+	my $umod = "null";
+	print "\tOption 1:   Add ALL exceptions.\n\tOption 2:   Add SPECIFIC exception by reference ID.\n\tOption 3:   ABORT FILTER MODIFICATION!\n\n";
+	until ($umod =~ m/^[0-4]$/)
+	{
+		print "Select one of the above options [1-3]: ";
+		$umod = <STDIN>;chomp($umod);
+	}
+	if ($umod == 1)
+	{
+		print "\nYou have selected: Option 1:   Add ALL exceptions.\n\nTHIS FUNCTIONALITY NOT YET IMPLEMENTED!!!\n\n";
+	}
+	elsif($umod == 2)
+	{
+		print "\nYou have selected: Option 2:   Add SPECIFIC exception by reference ID.\n\nTHIS FUNCTIONALITY NOT YET IMPLEMENTED!!!\n\n";
+	}
+	elsif ($umod == 3)
+	{
+		print "\nYou have selected: Option 3:   ABORT FILTER MODIFICATION!\n\n";
+	}
+}
+else
+{
+	print "Thank you for using BPARSE! Exiting...\n\n";
+}
+
+sub backup
+{
+	my $ubk = "";
+	until ($ubk =~ m/^yes$|^no$/i)
+	{
+		print "Do you want to backup your battleye/scripts.txt (yes/no)?: ";
+		$ubk = <STDIN>;
+	}
+	if ($ubk =~ m/^yes$/)
+	{
+		my $sfile = "null";
+		until ($sfile ne "null")
+		{
+			print "Enter the direct path to your battleye/scripts.txt file: ";
+			$sfile = <STDIN>;chomp($sfile);
+			if (!-e $sfile)
+			{
+				print "\n\%\% WARNING: $sfile does not exist!\n\%\% Verify that the filename you specified is valid.\n\n";
+				$sfile = "null";
+			}
+		}
+		print "Backing up $sfile: ";
+		my $dts = `date +\%m\%d\%Y_\%T`;chomp($dts);
+		`cp $sfile $sfile.$dts.bkup`;		
+		print "COMPLETE\n";
+		return("$sfile".'.'."$dts".'.'."bkup");
+	}
+	else
+	{
+		print "\n\%\% WARNING: You have chosen not to backup your battleye filters!\n";
+		return("WARN");
+	}
 }
