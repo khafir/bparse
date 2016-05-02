@@ -31,6 +31,8 @@ Default Output Explained:
 The script will display entries as they pertain to your battleye/scripts.log file, exception number first (#XXX) followed by the suggested exception text (!="xxx"). Exception suggestions have nested double-quotes escaped.
 
 #Version
+v1.4 (2016-05-02): Code modification to remedy extraneous newline (\n) character injection into the recommended exception text.
+
 v1.3 (2016-04-14): Added -d[U] secondary argument option.
 
 v1.2 (2016-04-14): Minor code tweaks, variable cleanup.
