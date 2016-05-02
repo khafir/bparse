@@ -1,5 +1,5 @@
 #Administrative Advisory
-v1.5 features the option framework to make automated changes to your battleye/scripts.txt (Battleye exception filter). These features are not live at this time due to ongoing testing.
+v1.5 features the option framework to make automated changes to your battleye/scripts.txt (Battleye exception filter). The mechanics to support these features are not live at this time due to ongoing testing.
 
 #bparse.pl
 Perl script for parsing battleye scripts.log entries and auto-generating exception entries. Designed for and only tested against the  Exile@ARMAIII platform in a CentOS-7 environment.
